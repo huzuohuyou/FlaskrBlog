@@ -38,6 +38,11 @@ def add_entry():
     flash('New entry was successfully posted')
     return redirect(url_for('show_entries'))
 
+@app.route('/index', methods=['GET', 'POST'])
+def index():
+    error = None
+    return render_template('index.html', error=error)
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     error = None
